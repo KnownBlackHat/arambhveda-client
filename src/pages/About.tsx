@@ -44,10 +44,7 @@ const values = [
 ];
 
 const team = [
-  { name: "Dr. Ananya Sharma", role: "Founder & CEO", expertise: "20+ years in Education" },
-  { name: "Rajesh Kumar", role: "Head of Counseling", expertise: "Former IIT Professor" },
-  { name: "Priya Mehta", role: "Director of Content", expertise: "Education Journalist" },
-  { name: "Vikram Singh", role: "Technology Head", expertise: "Ex-Google Engineer" },
+  { name: "Vaibhav Dubey", role: "Founder & CEO", expertise: "20+ years in Education" },
 ];
 
 export default function About() {
@@ -62,7 +59,7 @@ export default function About() {
               The Beginning of <span className="text-gradient">New Education</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Aarambh Veda is India's leading education consultancy platform, dedicated to 
+              Aarambh Veda is India's leading education consultancy platform, dedicated to
               helping students discover, compare, and choose the perfect college for their future.
             </p>
           </div>
@@ -91,20 +88,20 @@ export default function About() {
             <h2 className="text-3xl font-bold text-foreground mb-6 text-center">Our Story</h2>
             <div className="prose prose-lg mx-auto text-muted-foreground">
               <p>
-                Founded in 2020, Aarambh Veda was born out of a simple observation: finding 
-                the right college in India is overwhelming. With thousands of institutions, 
-                varying fees, different admission processes, and conflicting information, 
+                Founded in 2020, Aarambh Veda was born out of a simple observation: finding
+                the right college in India is overwhelming. With thousands of institutions,
+                varying fees, different admission processes, and conflicting information,
                 students often make uninformed decisions.
               </p>
               <p className="mt-4">
-                Our founders, having experienced this confusion firsthand, set out to create 
-                a comprehensive platform that brings all college information under one roof. 
+                Our founders, having experienced this confusion firsthand, set out to create
+                a comprehensive platform that brings all college information under one roof.
                 Today, Aarambh Veda has helped over 2 million students find their dream colleges.
               </p>
               <p className="mt-4">
-                From IITs and IIMs to regional colleges, from engineering to arts, we cover 
-                every institution and every course that matters. Our mission is simple: 
-                to ensure that every student has access to accurate, unbiased information 
+                From IITs and IIMs to regional colleges, from engineering to arts, we cover
+                every institution and every course that matters. Our mission is simple:
+                to ensure that every student has access to accurate, unbiased information
                 to make the best decision for their future.
               </p>
             </div>
@@ -142,7 +139,7 @@ export default function About() {
             Meet Our Leadership
           </h2>
           <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-            Our team of education experts and technology professionals work tirelessly 
+            Our team of education experts and technology professionals work tirelessly
             to make your college search easier.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
