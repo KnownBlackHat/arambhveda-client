@@ -12,8 +12,8 @@ export function Footer() {
           <div className="space-y-4">
             <img src={logo} alt="Aarambh Veda" className="h-16 w-auto bg-white p-2 rounded-lg" />
             <p className="text-sm opacity-80">
-              Aarambh Veda - The Beginning of New Education. Your trusted partner 
-              for college admissions in India. We help students find the perfect 
+              Aarambh Veda - The Beginning of New Education. Your trusted partner
+              for college admissions in India. We help students find the perfect
               college for their bright future.
             </p>
             <div className="flex gap-3">
@@ -71,7 +71,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 flex-shrink-0" />
-                <span>+91 98765 43210</span>
+                <span>+91 96436 89903 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 flex-shrink-0" />

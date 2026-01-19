@@ -52,7 +52,6 @@ export function Header() {
         <div className="container mx-auto px-4 flex justify-between items-center text-sm">
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1">+91 96436 89903<Phone className="w-3 h-3" />
-              +91 98765 43210
             </span>
             <span className="hidden sm:inline">|</span>
             <span className="hidden sm:inline">info@aarambhveda.com</span>
