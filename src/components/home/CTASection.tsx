@@ -21,10 +21,10 @@ export function CTASection() {
               Get Free Counselling
             </Button>
           </Link>
-          <a href="tel:+919876543210">
-            <Button size="lg" variant="outline" className="gap-2 border-white text-white hover:bg-white/10">
+          <a href="tel:+919643689903">
+            <Button size="lg" variant="outline" className="gap-2 border-white text-white bg-transparent hover:bg-white/10">
               <Phone className="w-5 h-5" />
-              Call: +91 98765 43210
+              Call: +91 9643689903
             </Button>
           </a>
         </div>

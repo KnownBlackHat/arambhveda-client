@@ -35,9 +35,18 @@ export const colleges: College[] = [
     highestPackage: 23000000,
     avgPackage: 2100000,
     topRecruiters: ["Google", "Microsoft", "Amazon", "Goldman Sachs", "Meta"],
-    infrastructure: ["Laboratories", "Library", "Sports Complex", "Hostel", "Wi-Fi Campus", "Medical Center"],
+    infrastructure: [
+      "Laboratories",
+      "Library",
+      "Sports Complex",
+      "Hostel",
+      "Wi-Fi Campus",
+      "Medical Center",
+    ],
     rating: 4.9,
-    description: "Indian Institute of Technology Bombay is a premier engineering institution known for cutting-edge research and excellent placements."
+    description:
+      "Indian Institute of Technology Bombay is a premier engineering institution known for cutting-edge research and excellent placements.",
+    image: "bombay.png",
   },
   {
     id: 2,
@@ -54,9 +63,17 @@ export const colleges: College[] = [
     highestPackage: 21000000,
     avgPackage: 1900000,
     topRecruiters: ["Google", "Microsoft", "Apple", "Adobe", "Flipkart"],
-    infrastructure: ["Research Labs", "Central Library", "Sports Complex", "Hostels", "Incubation Center"],
+    infrastructure: [
+      "Research Labs",
+      "Central Library",
+      "Sports Complex",
+      "Hostels",
+      "Incubation Center",
+    ],
     rating: 4.9,
-    description: "IIT Delhi is one of India's top engineering schools, renowned for innovation and entrepreneurship."
+    description:
+      "IIT Delhi is one of India's top engineering schools, renowned for innovation and entrepreneurship.",
+    image: "delhi.png",
   },
   {
     id: 3,
@@ -73,9 +90,17 @@ export const colleges: College[] = [
     highestPackage: 19500000,
     avgPackage: 1850000,
     topRecruiters: ["Google", "Microsoft", "Intel", "Qualcomm", "Samsung"],
-    infrastructure: ["Advanced Labs", "Library", "Deer Park", "Hostels", "Research Park"],
+    infrastructure: [
+      "Advanced Labs",
+      "Library",
+      "Deer Park",
+      "Hostels",
+      "Research Park",
+    ],
     rating: 4.95,
-    description: "IIT Madras consistently ranks #1 in India and is known for its beautiful campus and strong research culture."
+    description:
+      "IIT Madras consistently ranks #1 in India and is known for its beautiful campus and strong research culture.",
+    image: "madras.png",
   },
   {
     id: 4,
@@ -91,10 +116,25 @@ export const colleges: College[] = [
     admissionExams: ["JEE Advanced", "GATE", "CAT"],
     highestPackage: 18000000,
     avgPackage: 1600000,
-    topRecruiters: ["Google", "Goldman Sachs", "JP Morgan", "Microsoft", "Amazon"],
-    infrastructure: ["Labs", "Library", "Sports Complex", "Hostels", "Medical Center", "Airport"],
+    topRecruiters: [
+      "Google",
+      "Goldman Sachs",
+      "JP Morgan",
+      "Microsoft",
+      "Amazon",
+    ],
+    infrastructure: [
+      "Labs",
+      "Library",
+      "Sports Complex",
+      "Hostels",
+      "Medical Center",
+      "Airport",
+    ],
     rating: 4.85,
-    description: "The oldest IIT and one of the largest technical institutions in India with diverse programs."
+    description:
+      "The oldest IIT and one of the largest technical institutions in India with diverse programs.",
+    image: "kharagpur.png",
   },
   {
     id: 5,
@@ -111,9 +151,17 @@ export const colleges: College[] = [
     highestPackage: 17500000,
     avgPackage: 1550000,
     topRecruiters: ["Microsoft", "Google", "Apple", "Uber", "Tower Research"],
-    infrastructure: ["Computer Center", "Library", "Sports Facilities", "Hostels", "Airstrip"],
+    infrastructure: [
+      "Computer Center",
+      "Library",
+      "Sports Facilities",
+      "Hostels",
+      "Airstrip",
+    ],
     rating: 4.8,
-    description: "Known for academic rigor and strong computer science program."
+    description:
+      "Known for academic rigor and strong computer science program.",
+    image: "kanpur.png",
   },
   {
     id: 6,
@@ -130,9 +178,16 @@ export const colleges: College[] = [
     highestPackage: 75000000,
     avgPackage: 3200000,
     topRecruiters: ["McKinsey", "BCG", "Bain", "Goldman Sachs", "Amazon"],
-    infrastructure: ["Library", "Auditorium", "Sports Complex", "Hostels", "Incubation Center"],
+    infrastructure: [
+      "Library",
+      "Auditorium",
+      "Sports Complex",
+      "Hostels",
+      "Incubation Center",
+    ],
     rating: 4.95,
-    description: "The most prestigious business school in India and Asia."
+    description: "The most prestigious business school in India and Asia.",
+    image: "ahemdabad.png",
   },
   {
     id: 7,
@@ -149,9 +204,16 @@ export const colleges: College[] = [
     highestPackage: 68000000,
     avgPackage: 3100000,
     topRecruiters: ["BCG", "McKinsey", "Goldman Sachs", "Amazon", "Microsoft"],
-    infrastructure: ["Library", "Sports Complex", "Hostels", "Medical Center", "Incubation Hub"],
+    infrastructure: [
+      "Library",
+      "Sports Complex",
+      "Hostels",
+      "Medical Center",
+      "Incubation Hub",
+    ],
     rating: 4.9,
-    description: "Premier management institute known for strong industry connections in India's tech capital."
+    description:
+      "Premier management institute known for strong industry connections in India's tech capital.",
   },
   {
     id: 8,
@@ -167,10 +229,17 @@ export const colleges: College[] = [
     admissionExams: ["CAT", "GMAT"],
     highestPackage: 62000000,
     avgPackage: 2950000,
-    topRecruiters: ["McKinsey", "BCG", "Goldman Sachs", "Accenture", "Deloitte"],
+    topRecruiters: [
+      "McKinsey",
+      "BCG",
+      "Goldman Sachs",
+      "Accenture",
+      "Deloitte",
+    ],
     infrastructure: ["Library", "Auditorium", "Sports Facilities", "Hostels"],
     rating: 4.85,
-    description: "The oldest IIM, known for finance specialization and strong alumni network."
+    description:
+      "The oldest IIM, known for finance specialization and strong alumni network.",
   },
   {
     id: 9,
@@ -187,9 +256,16 @@ export const colleges: College[] = [
     highestPackage: 12000000,
     avgPackage: 800000,
     topRecruiters: ["Apollo", "Fortis", "Max Healthcare", "WHO", "ICMR"],
-    infrastructure: ["Hospital", "Research Labs", "Library", "Hostels", "Sports Complex"],
+    infrastructure: [
+      "Hospital",
+      "Research Labs",
+      "Library",
+      "Hostels",
+      "Sports Complex",
+    ],
     rating: 4.98,
-    description: "India's premier medical institution known for excellence in healthcare and research."
+    description:
+      "India's premier medical institution known for excellence in healthcare and research.",
   },
   {
     id: 10,
@@ -205,10 +281,16 @@ export const colleges: College[] = [
     admissionExams: ["CLAT", "AILET"],
     highestPackage: 4500000,
     avgPackage: 2800000,
-    topRecruiters: ["AZB & Partners", "Cyril Amarchand", "Khaitan & Co", "Trilegal"],
+    topRecruiters: [
+      "AZB & Partners",
+      "Cyril Amarchand",
+      "Khaitan & Co",
+      "Trilegal",
+    ],
     infrastructure: ["Library", "Moot Court", "Hostels", "Sports Facilities"],
     rating: 4.9,
-    description: "India's top law school, consistently ranked #1 for legal education."
+    description:
+      "India's top law school, consistently ranked #1 for legal education.",
   },
   {
     id: 11,
@@ -225,9 +307,16 @@ export const colleges: College[] = [
     highestPackage: 18000000,
     avgPackage: 1400000,
     topRecruiters: ["Google", "Microsoft", "Goldman Sachs", "Samsung", "Uber"],
-    infrastructure: ["Labs", "Library", "Sports Complex", "Hostels", "Incubation Center"],
+    infrastructure: [
+      "Labs",
+      "Library",
+      "Sports Complex",
+      "Hostels",
+      "Incubation Center",
+    ],
     rating: 4.7,
-    description: "Premier private engineering institution known for flexible academics and strong placements."
+    description:
+      "Premier private engineering institution known for flexible academics and strong placements.",
   },
   {
     id: 12,
@@ -244,9 +333,16 @@ export const colleges: College[] = [
     highestPackage: 15000000,
     avgPackage: 900000,
     topRecruiters: ["Microsoft", "Amazon", "Infosys", "TCS", "Cognizant"],
-    infrastructure: ["Advanced Labs", "Library", "Sports Complex", "Hostels", "Wi-Fi Campus"],
+    infrastructure: [
+      "Advanced Labs",
+      "Library",
+      "Sports Complex",
+      "Hostels",
+      "Wi-Fi Campus",
+    ],
     rating: 4.5,
-    description: "One of India's top private engineering universities with excellent infrastructure."
+    description:
+      "One of India's top private engineering universities with excellent infrastructure.",
   },
   {
     id: 13,
@@ -263,9 +359,16 @@ export const colleges: College[] = [
     highestPackage: 4500000,
     avgPackage: 800000,
     topRecruiters: ["Deloitte", "EY", "McKinsey", "BCG", "Media Houses"],
-    infrastructure: ["Library", "Chapel", "Sports Grounds", "Hostels", "Auditorium"],
+    infrastructure: [
+      "Library",
+      "Chapel",
+      "Sports Grounds",
+      "Hostels",
+      "Auditorium",
+    ],
     rating: 4.8,
-    description: "India's most prestigious liberal arts college, known for exceptional alumni."
+    description:
+      "India's most prestigious liberal arts college, known for exceptional alumni.",
   },
   {
     id: 14,
@@ -282,9 +385,15 @@ export const colleges: College[] = [
     highestPackage: 3200000,
     avgPackage: 1200000,
     topRecruiters: ["Goldman Sachs", "Deloitte", "EY", "KPMG", "PwC"],
-    infrastructure: ["Library", "Auditorium", "Sports Facilities", "Computer Lab"],
+    infrastructure: [
+      "Library",
+      "Auditorium",
+      "Sports Facilities",
+      "Computer Lab",
+    ],
     rating: 4.85,
-    description: "India's top commerce college, known for producing industry leaders."
+    description:
+      "India's top commerce college, known for producing industry leaders.",
   },
   {
     id: 15,
@@ -301,9 +410,15 @@ export const colleges: College[] = [
     highestPackage: 2800000,
     avgPackage: 750000,
     topRecruiters: ["Deloitte", "EY", "BCG", "Media Houses", "NGOs"],
-    infrastructure: ["Library", "Auditorium", "Sports Ground", "Computer Center"],
+    infrastructure: [
+      "Library",
+      "Auditorium",
+      "Sports Ground",
+      "Computer Center",
+    ],
     rating: 4.75,
-    description: "Top women's college in India, known for academic excellence and empowerment."
+    description:
+      "Top women's college in India, known for academic excellence and empowerment.",
   },
   {
     id: 16,
@@ -320,9 +435,16 @@ export const colleges: College[] = [
     highestPackage: 12000000,
     avgPackage: 1100000,
     topRecruiters: ["Google", "Microsoft", "Amazon", "Samsung", "Intel"],
-    infrastructure: ["Labs", "Library", "Sports Complex", "Hostels", "Medical Center"],
+    infrastructure: [
+      "Labs",
+      "Library",
+      "Sports Complex",
+      "Hostels",
+      "Medical Center",
+    ],
     rating: 4.6,
-    description: "The best NIT in India, known for strong engineering programs."
+    description:
+      "The best NIT in India, known for strong engineering programs.",
   },
   {
     id: 17,
@@ -339,9 +461,15 @@ export const colleges: College[] = [
     highestPackage: 68000000,
     avgPackage: 3400000,
     topRecruiters: ["McKinsey", "BCG", "Amazon", "Google", "Microsoft"],
-    infrastructure: ["Library", "Sports Complex", "Hostels", "Incubation Hub", "Auditorium"],
+    infrastructure: [
+      "Library",
+      "Sports Complex",
+      "Hostels",
+      "Incubation Hub",
+      "Auditorium",
+    ],
     rating: 4.85,
-    description: "India's top one-year MBA program with global rankings."
+    description: "India's top one-year MBA program with global rankings.",
   },
   {
     id: 18,
@@ -357,10 +485,22 @@ export const colleges: College[] = [
     admissionExams: ["NIFT Entrance"],
     highestPackage: 4500000,
     avgPackage: 800000,
-    topRecruiters: ["Zara", "H&M", "Raymond", "Aditya Birla Fashion", "Reliance Retail"],
-    infrastructure: ["Design Studios", "Library", "Workshops", "Hostels", "Exhibition Hall"],
+    topRecruiters: [
+      "Zara",
+      "H&M",
+      "Raymond",
+      "Aditya Birla Fashion",
+      "Reliance Retail",
+    ],
+    infrastructure: [
+      "Design Studios",
+      "Library",
+      "Workshops",
+      "Hostels",
+      "Exhibition Hall",
+    ],
     rating: 4.7,
-    description: "India's premier fashion and design institute."
+    description: "India's premier fashion and design institute.",
   },
   {
     id: 19,
@@ -377,9 +517,15 @@ export const colleges: College[] = [
     highestPackage: 5000000,
     avgPackage: 1200000,
     topRecruiters: ["IDEO", "Frog Design", "Samsung", "Apple", "Google"],
-    infrastructure: ["Design Studios", "Workshops", "Library", "Exhibition Spaces"],
+    infrastructure: [
+      "Design Studios",
+      "Workshops",
+      "Library",
+      "Exhibition Spaces",
+    ],
     rating: 4.8,
-    description: "India's top design institution, known for product and industrial design."
+    description:
+      "India's top design institution, known for product and industrial design.",
   },
   {
     id: 20,
@@ -396,9 +542,16 @@ export const colleges: College[] = [
     highestPackage: 52000000,
     avgPackage: 2850000,
     topRecruiters: ["McKinsey", "BCG", "Goldman Sachs", "Amazon", "Google"],
-    infrastructure: ["Library", "Sports Complex", "Hostels", "Auditorium", "Chapel"],
+    infrastructure: [
+      "Library",
+      "Sports Complex",
+      "Hostels",
+      "Auditorium",
+      "Chapel",
+    ],
     rating: 4.8,
-    description: "India's oldest B-school, known for HR and Business Management."
+    description:
+      "India's oldest B-school, known for HR and Business Management.",
   },
   {
     id: 21,
@@ -415,9 +568,16 @@ export const colleges: College[] = [
     highestPackage: 18000000,
     avgPackage: 1400000,
     topRecruiters: ["Google", "Microsoft", "ISRO", "DRDO", "Intel"],
-    infrastructure: ["Research Labs", "Library", "Sports Complex", "Hostels", "Botanical Garden"],
+    infrastructure: [
+      "Research Labs",
+      "Library",
+      "Sports Complex",
+      "Hostels",
+      "Botanical Garden",
+    ],
     rating: 4.95,
-    description: "India's premier research institution, consistently ranked #1 in research output."
+    description:
+      "India's premier research institution, consistently ranked #1 in research output.",
   },
   {
     id: 22,
@@ -434,9 +594,16 @@ export const colleges: College[] = [
     highestPackage: 2500000,
     avgPackage: 600000,
     topRecruiters: ["UPSC", "Civil Services", "NGOs", "Media", "Academia"],
-    infrastructure: ["Library", "Sports Complex", "Hostels", "Health Center", "Cultural Center"],
+    infrastructure: [
+      "Library",
+      "Sports Complex",
+      "Hostels",
+      "Health Center",
+      "Cultural Center",
+    ],
     rating: 4.7,
-    description: "Known for social sciences, humanities and vibrant campus life."
+    description:
+      "Known for social sciences, humanities and vibrant campus life.",
   },
   {
     id: 23,
@@ -453,9 +620,16 @@ export const colleges: College[] = [
     highestPackage: 5000000,
     avgPackage: 500000,
     topRecruiters: ["TCS", "Infosys", "BHEL", "ONGC", "Indian Railways"],
-    infrastructure: ["Hospitals", "Labs", "Library", "Museums", "Sports Complex"],
+    infrastructure: [
+      "Hospitals",
+      "Labs",
+      "Library",
+      "Museums",
+      "Sports Complex",
+    ],
     rating: 4.5,
-    description: "Asia's largest residential university with diverse academic programs."
+    description:
+      "Asia's largest residential university with diverse academic programs.",
   },
   {
     id: 24,
@@ -472,9 +646,16 @@ export const colleges: College[] = [
     highestPackage: 4800000,
     avgPackage: 600000,
     topRecruiters: ["TCS", "Infosys", "Cognizant", "Wipro", "HCL"],
-    infrastructure: ["Labs", "Library", "Sports Complex", "Hostels", "Research Park"],
+    infrastructure: [
+      "Labs",
+      "Library",
+      "Sports Complex",
+      "Hostels",
+      "Research Park",
+    ],
     rating: 4.4,
-    description: "Leading technical university in South India affiliated with 500+ colleges."
+    description:
+      "Leading technical university in South India affiliated with 500+ colleges.",
   },
   {
     id: 25,
@@ -490,10 +671,23 @@ export const colleges: College[] = [
     admissionExams: ["NEET"],
     highestPackage: 8000000,
     avgPackage: 700000,
-    topRecruiters: ["CMC Hospital", "Apollo", "AIIMS", "WHO", "International Hospitals"],
-    infrastructure: ["Hospital", "Research Labs", "Library", "Hostels", "Recreation Center"],
+    topRecruiters: [
+      "CMC Hospital",
+      "Apollo",
+      "AIIMS",
+      "WHO",
+      "International Hospitals",
+    ],
+    infrastructure: [
+      "Hospital",
+      "Research Labs",
+      "Library",
+      "Hostels",
+      "Recreation Center",
+    ],
     rating: 4.85,
-    description: "One of India's best medical colleges, known for quality healthcare and education."
+    description:
+      "One of India's best medical colleges, known for quality healthcare and education.",
   },
   {
     id: 26,
@@ -509,10 +703,23 @@ export const colleges: College[] = [
     admissionExams: ["MET", "NEET"],
     highestPackage: 12000000,
     avgPackage: 800000,
-    topRecruiters: ["Microsoft", "Amazon", "Deloitte", "Apollo", "Manipal Hospitals"],
-    infrastructure: ["Hospitals", "Labs", "Library", "Sports Complex", "Student Center"],
+    topRecruiters: [
+      "Microsoft",
+      "Amazon",
+      "Deloitte",
+      "Apollo",
+      "Manipal Hospitals",
+    ],
+    infrastructure: [
+      "Hospitals",
+      "Labs",
+      "Library",
+      "Sports Complex",
+      "Student Center",
+    ],
     rating: 4.6,
-    description: "Multi-disciplinary university known for medical, engineering and management programs."
+    description:
+      "Multi-disciplinary university known for medical, engineering and management programs.",
   },
   {
     id: 27,
@@ -529,9 +736,16 @@ export const colleges: College[] = [
     highestPackage: 3500000,
     avgPackage: 1200000,
     topRecruiters: ["Deloitte", "EY", "KPMG", "Amazon", "HDFC"],
-    infrastructure: ["Library", "Sports Complex", "Hostels", "Auditorium", "Tech Labs"],
+    infrastructure: [
+      "Library",
+      "Sports Complex",
+      "Hostels",
+      "Auditorium",
+      "Tech Labs",
+    ],
     rating: 4.5,
-    description: "Known for management, law and media programs with international exposure."
+    description:
+      "Known for management, law and media programs with international exposure.",
   },
   {
     id: 28,
@@ -548,9 +762,16 @@ export const colleges: College[] = [
     highestPackage: 2500000,
     avgPackage: 650000,
     topRecruiters: ["Deloitte", "EY", "Amazon", "TCS", "Wipro"],
-    infrastructure: ["Library", "Auditorium", "Sports Complex", "Hostels", "Chapel"],
+    infrastructure: [
+      "Library",
+      "Auditorium",
+      "Sports Complex",
+      "Hostels",
+      "Chapel",
+    ],
     rating: 4.4,
-    description: "Multi-disciplinary university known for arts, commerce and management."
+    description:
+      "Multi-disciplinary university known for arts, commerce and management.",
   },
   {
     id: 29,
@@ -567,9 +788,16 @@ export const colleges: College[] = [
     highestPackage: 21000000,
     avgPackage: 1600000,
     topRecruiters: ["Google", "Microsoft", "Amazon", "Apple", "Uber"],
-    infrastructure: ["Research Labs", "Library", "Sports Complex", "Hostels", "Incubation Center"],
+    infrastructure: [
+      "Research Labs",
+      "Library",
+      "Sports Complex",
+      "Hostels",
+      "Incubation Center",
+    ],
     rating: 4.75,
-    description: "India's top IIIT, known for computer science and research excellence."
+    description:
+      "India's top IIIT, known for computer science and research excellence.",
   },
   {
     id: 30,
@@ -586,10 +814,16 @@ export const colleges: College[] = [
     highestPackage: 2800000,
     avgPackage: 900000,
     topRecruiters: ["UNICEF", "World Bank", "Deloitte", "KPMG", "NGOs"],
-    infrastructure: ["Library", "Hostels", "Sports Facilities", "Research Center"],
+    infrastructure: [
+      "Library",
+      "Hostels",
+      "Sports Facilities",
+      "Research Center",
+    ],
     rating: 4.7,
-    description: "India's top social science institution, known for social work and development studies."
-  }
+    description:
+      "India's top social science institution, known for social work and development studies.",
+  },
 ];
 
 export const courseCategories = [
@@ -606,15 +840,47 @@ export const courseCategories = [
 ];
 
 export const states = [
-  "Andhra Pradesh", "Assam", "Bihar", "Chhattisgarh", "Delhi", "Goa", 
-  "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", 
-  "Kerala", "Madhya Pradesh", "Maharashtra", "Odisha", "Punjab", 
-  "Rajasthan", "Tamil Nadu", "Telangana", "Uttar Pradesh", "Uttarakhand", "West Bengal"
+  "Andhra Pradesh",
+  "Assam",
+  "Bihar",
+  "Chhattisgarh",
+  "Delhi",
+  "Goa",
+  "Gujarat",
+  "Haryana",
+  "Himachal Pradesh",
+  "Jharkhand",
+  "Karnataka",
+  "Kerala",
+  "Madhya Pradesh",
+  "Maharashtra",
+  "Odisha",
+  "Punjab",
+  "Rajasthan",
+  "Tamil Nadu",
+  "Telangana",
+  "Uttar Pradesh",
+  "Uttarakhand",
+  "West Bengal",
 ];
 
 export const examList = [
-  "JEE Main", "JEE Advanced", "NEET", "CAT", "GATE", "CLAT", "XAT", "SNAP",
-  "BITSAT", "VITEEE", "CUET", "NIFT", "NID DAT", "CMAT", "MAT", "GMAT"
+  "JEE Main",
+  "JEE Advanced",
+  "NEET",
+  "CAT",
+  "GATE",
+  "CLAT",
+  "XAT",
+  "SNAP",
+  "BITSAT",
+  "VITEEE",
+  "CUET",
+  "NIFT",
+  "NID DAT",
+  "CMAT",
+  "MAT",
+  "GMAT",
 ];
 
 export function formatCurrency(amount: number): string {

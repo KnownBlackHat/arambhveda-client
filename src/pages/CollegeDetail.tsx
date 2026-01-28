@@ -61,8 +61,12 @@ export default function CollegeDetail() {
 
           <div className="flex flex-col lg:flex-row gap-8">
             {/* College Logo */}
-            <div className="w-full lg:w-48 h-48 bg-card rounded-xl border border-border flex items-center justify-center flex-shrink-0">
-              <GraduationCap className="w-20 h-20 text-primary/30" />
+            <div className="w-full lg:w-48 h-48 bg-card rounded-xl border border-border overflow-hidden flex-shrink-0">
+              <img 
+                src={college.image || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%236366f1;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%238b5cf6;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='200' height='200' fill='url(%23grad)'/%3E%3Ctext x='100' y='90' font-family='Arial, sans-serif' font-size='24' font-weight='bold' fill='white' text-anchor='middle'%3ECollege%3C/text%3E%3Ctext x='100' y='120' font-family='Arial, sans-serif' font-size='18' fill='white' text-anchor='middle'%3ELogo%3C/text%3E%3C/svg%3E"} 
+                alt={college.name} 
+                className="w-full h-full object-cover"
+              />
             </div>
 
             {/* College Info */}
