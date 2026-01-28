@@ -32,7 +32,7 @@ export default function Dashboard() {
   const user = {
     name: "Rahul Sharma",
     email: "rahul.sharma@email.com",
-    phone: "+91 96436 89903",
+    phone: "+91 98765 43210",
     education: "Class 12th",
     preferredCourse: "B.Tech",
   };

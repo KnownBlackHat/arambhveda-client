@@ -10,7 +10,7 @@ export function CTASection() {
           Need Help Choosing the Right College?
         </h2>
         <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-          Get free counselling from our expert advisors. We'll help you find
+          Get free counselling from our expert advisors. We'll help you find 
           the perfect college based on your preferences, budget, and career goals.
         </p>
 
@@ -21,10 +21,10 @@ export function CTASection() {
               Get Free Counselling
             </Button>
           </Link>
-          <a href="tel:+919643689903">
-            <Button size="lg" variant="outline" className="gap-2 border-white text-black hover:bg-white/10">
+          <a href="tel:+919876543210">
+            <Button size="lg" variant="outline" className="gap-2 border-white text-white hover:bg-white/10">
               <Phone className="w-5 h-5" />
-              Call: +91 96436 89903
+              Call: +91 98765 43210
             </Button>
           </a>
         </div>

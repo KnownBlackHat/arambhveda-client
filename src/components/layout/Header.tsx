@@ -51,8 +51,7 @@ export function Header() {
       <div className="bg-primary text-primary-foreground py-1.5">
         <div className="container mx-auto px-4 flex justify-between items-center text-sm">
           <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1">+91 96436 89903<Phone className="w-3 h-3" />
-            </span>
+            
             <span className="hidden sm:inline">|</span>
             <span className="hidden sm:inline">info@aarambhveda.com</span>
           </div>
@@ -69,7 +68,7 @@ export function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Aarambh Veda" className="h-20 w-auto" />
+            <img src={logo} alt="Aarambh Veda" className="h-12 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}

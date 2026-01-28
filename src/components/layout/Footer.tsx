@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
 import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin } from "lucide-react";
 import logo from "@/assets/logo.png";
-
 export function Footer() {
-  return (
-    <footer className="bg-foreground text-background">
+  return <footer className="bg-foreground text-background">
       {/* Main Footer */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -12,8 +10,8 @@ export function Footer() {
           <div className="space-y-4">
             <img src={logo} alt="Aarambh Veda" className="h-16 w-auto bg-white p-2 rounded-lg" />
             <p className="text-sm opacity-80">
-              Aarambh Veda - The Beginning of New Education. Your trusted partner
-              for college admissions in India. We help students find the perfect
+              Aarambh Veda - The Beginning of New Education. Your trusted partner 
+              for college admissions in India. We help students find the perfect 
               college for their bright future.
             </p>
             <div className="flex gap-3">
@@ -71,11 +69,11 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 flex-shrink-0" />
-                <span>+91 96436 89903 </span>
+                <span>+91 9643689903</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 flex-shrink-0" />
-                <span>support@aarambhveda.com</span>
+                <span>info@aarambhveda.com</span>
               </li>
             </ul>
             <div className="mt-4 p-4 bg-background/10 rounded-lg">
@@ -99,6 +97,5 @@ export function Footer() {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 }
