@@ -33,20 +33,28 @@ export function TopCollegesSection() {
               to={`/college/${college.id}`}
               className="group bg-card rounded-xl border border-border overflow-hidden card-hover"
             >
-              {/* Image Placeholder with Rank Badge */}
+              {/* Image with Rank Badge */}
               <div className="relative h-40 bg-gradient-to-br from-primary/20 to-accent/20">
-                <div className="absolute top-3 left-3">
+                <div className="absolute top-3 left-3 z-10">
                   <Badge className="bg-primary text-primary-foreground font-bold">
                     #{index + 1}
                   </Badge>
                 </div>
-                <div className="absolute bottom-3 right-3 flex items-center gap-1 bg-card/90 backdrop-blur px-2 py-1 rounded-full text-sm">
+                <div className="absolute bottom-3 right-3 z-10 flex items-center gap-1 bg-card/90 backdrop-blur px-2 py-1 rounded-full text-sm">
                   <Star className="w-4 h-4 text-accent fill-accent" />
                   <span className="font-semibold">{college.rating}</span>
                 </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Award className="w-16 h-16 text-primary/30" />
-                </div>
+                {college.image ? (
+                  <img 
+                    src={`/${college.image}`} 
+                    alt={college.name}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Award className="w-16 h-16 text-primary/30" />
+                  </div>
+                )}
               </div>
 
               {/* Content */}

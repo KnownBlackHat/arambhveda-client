@@ -37,18 +37,39 @@ export default function TopColleges() {
               className="block bg-card rounded-xl border border-border overflow-hidden card-hover group"
             >
               <div className="flex flex-col md:flex-row">
-                {/* Rank Badge */}
-                <div className={`w-full md:w-20 py-4 md:py-0 flex items-center justify-center ${
-                  index === 0 ? "bg-gradient-to-br from-yellow-400 to-yellow-600" :
-                  index === 1 ? "bg-gradient-to-br from-gray-300 to-gray-500" :
-                  index === 2 ? "bg-gradient-to-br from-amber-600 to-amber-800" :
-                  "bg-secondary"
-                }`}>
-                  <div className="text-center">
-                    <div className={`text-3xl font-bold ${index < 3 ? "text-white" : "text-foreground"}`}>
-                      #{index + 1}
+                {/* College Image with Rank Badge */}
+                <div className="relative w-full md:w-20 h-32 md:h-auto">
+                  {college.image ? (
+                    <img 
+                      src={`/${college.image}`} 
+                      alt={college.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className={`w-full h-full flex items-center justify-center ${
+                      index === 0 ? "bg-gradient-to-br from-yellow-400 to-yellow-600" :
+                      index === 1 ? "bg-gradient-to-br from-gray-300 to-gray-500" :
+                      index === 2 ? "bg-gradient-to-br from-amber-600 to-amber-800" :
+                      "bg-secondary"
+                    }`}>
+                      <div className="text-center">
+                        <div className={`text-3xl font-bold ${index < 3 ? "text-white" : "text-foreground"}`}>
+                          #{index + 1}
+                        </div>
+                        {index < 3 && <Trophy className={`w-5 h-5 mx-auto mt-1 ${index < 3 ? "text-white/80" : ""}`} />}
+                      </div>
                     </div>
-                    {index < 3 && <Trophy className={`w-5 h-5 mx-auto mt-1 ${index < 3 ? "text-white/80" : ""}`} />}
+                  )}
+                  {/* Rank Badge Overlay */}
+                  <div className="absolute top-2 left-2 z-10">
+                    <Badge className={`text-xs font-bold ${
+                      index === 0 ? "bg-yellow-500 text-white" :
+                      index === 1 ? "bg-gray-500 text-white" :
+                      index === 2 ? "bg-amber-700 text-white" :
+                      "bg-primary text-primary-foreground"
+                    }`}>
+                      #{index + 1}
+                    </Badge>
                   </div>
                 </div>
 

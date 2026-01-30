@@ -277,8 +277,18 @@ function CollegeCard({ college, rank }: { college: College; rank: number }) {
     >
       <div className="flex flex-col md:flex-row gap-5">
         {/* College Image/Logo */}
-        <div className="w-full md:w-32 h-24 bg-secondary rounded-lg flex items-center justify-center flex-shrink-0">
-          <span className="text-3xl font-bold text-primary/30">#{rank}</span>
+        <div className="w-full md:w-32 h-24 bg-secondary rounded-lg overflow-hidden flex-shrink-0">
+          {college.image ? (
+            <img 
+              src={`/${college.image}`} 
+              alt={college.name}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center">
+              <span className="text-3xl font-bold text-primary/30">#{rank}</span>
+            </div>
+          )}
         </div>
 
         {/* Content */}

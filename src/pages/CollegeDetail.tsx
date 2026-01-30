@@ -61,8 +61,18 @@ export default function CollegeDetail() {
 
           <div className="flex flex-col lg:flex-row gap-8">
             {/* College Logo */}
-            <div className="w-full lg:w-48 h-48 bg-card rounded-xl border border-border flex items-center justify-center flex-shrink-0">
-              <GraduationCap className="w-20 h-20 text-primary/30" />
+            <div className="w-full lg:w-48 h-48 bg-card rounded-xl border border-border overflow-hidden flex-shrink-0">
+              {college.image ? (
+                <img 
+                  src={`/${college.image}`} 
+                  alt={college.name}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center">
+                  <GraduationCap className="w-20 h-20 text-primary/30" />
+                </div>
+              )}
             </div>
 
             {/* College Info */}
