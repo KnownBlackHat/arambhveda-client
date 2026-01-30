@@ -58,6 +58,9 @@ export function VoiceCallAgent({ isOpen, onClose }: VoiceCallAgentProps) {
     },
   });
 
+  // Get isSpeaking from conversation
+  const isSpeaking = conversation.isSpeaking;
+
   // Handle mounting state to avoid DOM conflicts
   useEffect(() => {
     if (isOpen) {
@@ -106,28 +109,31 @@ export function VoiceCallAgent({ isOpen, onClose }: VoiceCallAgentProps) {
         await audioContextRef.current.resume();
       }
 
-      const stream = await navigator.mediaDevices.getUserMedia({ 
+      // Request microphone with strong echo cancellation settings
+      // The browser + ElevenLabs Server VAD will handle filtering out AI voice
+      await navigator.mediaDevices.getUserMedia({
         audio: {
           echoCancellation: true,
           noiseSuppression: true,
           autoGainControl: true,
+          channelCount: 1,
           sampleRate: 16000,
-        } 
+        },
       });
-      
-      stream.getTracks().forEach(track => track.stop());
 
-      const { data, error } = await supabase.functions.invoke("elevenlabs-conversation-token");
+      const { data, error } = await supabase.functions.invoke(
+        "elevenlabs-conversation-token",
+      );
 
-      if (error || !data?.signed_url) {
-          console.log(data)
-        throw new Error(error?.message || "Failed to get connection token");
+      if (error || !data?.token) {
+        throw new Error(error?.message || "Failed to get conversation token");
       }
 
-      console.log("Starting conversation with signed URL");
+      console.log("Starting conversation with WebRTC token");
 
       await conversation.startSession({
-        signedUrl: data.signed_url,
+        conversationToken: data.token,
+        connectionType: "webrtc",
       });
       
     } catch (error) {
@@ -155,7 +161,6 @@ export function VoiceCallAgent({ isOpen, onClose }: VoiceCallAgentProps) {
   if (!isMounted) return null;
 
   const isConnected = conversation.status === "connected";
-  const isSpeaking = conversation.isSpeaking;
 
   const content = (
     <div 
@@ -215,7 +220,7 @@ export function VoiceCallAgent({ isOpen, onClose }: VoiceCallAgentProps) {
           {transcript.length === 0 ? (
             <div className="h-full flex items-center justify-center text-muted-foreground text-sm text-center px-4">
               {isConnected 
-                ? "🎤 I'm listening! Start speaking..."
+                ? "🎤 I'm listening! Start speaking... (You can interrupt anytime)"
                 : "📞 Tap the green call button to connect with our AI counselor"}
             </div>
           ) : (
@@ -278,7 +283,7 @@ export function VoiceCallAgent({ isOpen, onClose }: VoiceCallAgentProps) {
 
         <div className="px-6 pb-4 text-center text-xs text-muted-foreground">
           {isConnected 
-            ? "🗣️ Speak naturally - I can hear you!"
+            ? "🗣️ Speak naturally - You can interrupt anytime!"
             : "Free consultation • No signup required"
           }
         </div>

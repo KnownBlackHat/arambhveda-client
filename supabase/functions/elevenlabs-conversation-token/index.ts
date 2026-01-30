@@ -22,15 +22,15 @@ serve(async (req) => {
       throw new Error("ELEVENLABS_AGENT_ID is not configured");
     }
 
-    // Use conversation token for WebRTC (more stable than signed URL)
+    // WebRTC token endpoint (best echo cancellation / speaker mode)
     const response = await fetch(
-      `https://api.elevenlabs.io/v1/convai/conversation/get_signed_url?agent_id=${ELEVENLABS_AGENT_ID}`,
+      `https://api.elevenlabs.io/v1/convai/conversation/token?agent_id=${ELEVENLABS_AGENT_ID}`,
       {
         method: "GET",
         headers: {
           "xi-api-key": ELEVENLABS_API_KEY,
         },
-      }
+      },
     );
 
     if (!response.ok) {
@@ -40,8 +40,14 @@ serve(async (req) => {
     }
 
     const data = await response.json();
+    const token = data?.token;
 
-    return new Response(JSON.stringify({ signed_url: data.signed_url }), {
+    if (!token || typeof token !== "string") {
+      console.error("Unexpected ElevenLabs token response:", data);
+      throw new Error("Invalid token response from ElevenLabs");
+    }
+
+    return new Response(JSON.stringify({ token }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   } catch (error) {
