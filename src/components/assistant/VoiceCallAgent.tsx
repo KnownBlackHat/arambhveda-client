@@ -120,6 +120,7 @@ export function VoiceCallAgent({ isOpen, onClose }: VoiceCallAgentProps) {
       const { data, error } = await supabase.functions.invoke("elevenlabs-conversation-token");
 
       if (error || !data?.signed_url) {
+          console.log(data)
         throw new Error(error?.message || "Failed to get connection token");
       }
 
