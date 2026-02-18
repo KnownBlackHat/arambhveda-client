@@ -44,10 +44,7 @@ const values = [
 ];
 
 const team = [
-  { name: "Dr. Ananya Sharma", role: "Founder & CEO", expertise: "20+ years in Education" },
-  { name: "Rajesh Kumar", role: "Head of Counseling", expertise: "Former IIT Professor" },
-  { name: "Priya Mehta", role: "Director of Content", expertise: "Education Journalist" },
-  { name: "Vikram Singh", role: "Technology Head", expertise: "Ex-Google Engineer" },
+  { name: "Vaibhav Dubey", role: "Founder & CEO", expertise: "" },
 ];
 
 export default function About() {
