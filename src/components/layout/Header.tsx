@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Search, ChevronDown, User, Phone } from "lucide-react";
+import { Menu, X, Search, ChevronDown, User, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { useAuth } from "@/hooks/useAuth";
 import logo from "@/assets/logo.png";
+
 const courseCategories = [{
   name: "Engineering",
   path: "/colleges?category=engineering"
@@ -23,6 +26,7 @@ const courseCategories = [{
   name: "Arts & Humanities",
   path: "/colleges?category=arts"
 }];
+
 const examLinks = [{
   name: "JEE Main",
   path: "/exams/jee-main"
@@ -42,23 +46,42 @@ const examLinks = [{
   name: "CLAT",
   path: "/exams/clat"
 }];
+
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { user, signOut } = useAuth();
   const isActive = (path: string) => location.pathname === path;
+
+  const displayName = user?.user_metadata?.full_name || user?.user_metadata?.display_name || user?.email?.split("@")[0] || "User";
+  const initials = displayName.split(" ").map((n: string) => n[0]).join("").toUpperCase().slice(0, 2);
+
+  const handleSignOut = async () => {
+    await signOut();
+  };
+
   return <header className="sticky top-0 z-50 w-full bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/90 border-b border-border">
       {/* Top Bar */}
       <div className="bg-primary text-primary-foreground py-1.5">
         <div className="container mx-auto px-4 flex justify-between items-center text-sm">
           <div className="flex items-center gap-4">
-            
             <span className="hidden sm:inline">|</span>
-            <span className="hidden sm:inline">info@aarambhveda.com</span>
+            <span className="hidden sm:inline">Mirzapur, Uttar Pradesh | info@aarambhveda.com</span>
           </div>
           <div className="flex items-center gap-3">
-            <Link to="/login" className="hover:underline">Student Login</Link>
-            <span>|</span>
-            <Link to="/register" className="hover:underline">Register</Link>
+            {user ? (
+              <>
+                <Link to="/profile" className="hover:underline">My Profile</Link>
+                <span>|</span>
+                <button onClick={handleSignOut} className="hover:underline">Logout</button>
+              </>
+            ) : (
+              <>
+                <Link to="/login" className="hover:underline">Student Login</Link>
+                <span>|</span>
+                <Link to="/register" className="hover:underline">Register</Link>
+              </>
+            )}
           </div>
         </div>
       </div>
@@ -125,15 +148,43 @@ export function Header() {
                 <Search className="w-5 h-5" />
               </Button>
             </Link>
-            <Link to="/login">
-              <Button variant="outline" size="sm" className="gap-2">
-                <User className="w-4 h-4" />
-                Login
-              </Button>
-            </Link>
-            <Link to="/register">
-              <Button size="sm">Get Started</Button>
-            </Link>
+            {user ? (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" size="sm" className="gap-2">
+                    <Avatar className="w-6 h-6">
+                      <AvatarFallback className="bg-primary text-primary-foreground text-xs">
+                        {initials}
+                      </AvatarFallback>
+                    </Avatar>
+                    <span className="max-w-[120px] truncate">{displayName}</span>
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="w-48">
+                  <DropdownMenuItem asChild>
+                    <Link to="/profile" className="flex items-center gap-2">
+                      <User className="w-4 h-4" /> My Profile
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onClick={handleSignOut} className="flex items-center gap-2 text-destructive">
+                    <LogOut className="w-4 h-4" /> Sign Out
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <>
+                <Link to="/login">
+                  <Button variant="outline" size="sm" className="gap-2">
+                    <User className="w-4 h-4" />
+                    Login
+                  </Button>
+                </Link>
+                <Link to="/register">
+                  <Button size="sm">Get Started</Button>
+                </Link>
+              </>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -164,12 +215,25 @@ export function Header() {
                 About Us
               </Link>
               <div className="flex gap-2 pt-3 border-t border-border">
-                <Link to="/login" className="flex-1" onClick={() => setMobileMenuOpen(false)}>
-                  <Button variant="outline" className="w-full">Login</Button>
-                </Link>
-                <Link to="/register" className="flex-1" onClick={() => setMobileMenuOpen(false)}>
-                  <Button className="w-full">Register</Button>
-                </Link>
+                {user ? (
+                  <>
+                    <Link to="/profile" className="flex-1" onClick={() => setMobileMenuOpen(false)}>
+                      <Button variant="outline" className="w-full">My Profile</Button>
+                    </Link>
+                    <Button variant="destructive" className="flex-1" onClick={() => { handleSignOut(); setMobileMenuOpen(false); }}>
+                      Sign Out
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <Link to="/login" className="flex-1" onClick={() => setMobileMenuOpen(false)}>
+                      <Button variant="outline" className="w-full">Login</Button>
+                    </Link>
+                    <Link to="/register" className="flex-1" onClick={() => setMobileMenuOpen(false)}>
+                      <Button className="w-full">Register</Button>
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
           </div>}

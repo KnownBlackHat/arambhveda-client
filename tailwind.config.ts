@@ -113,8 +113,8 @@ export default {
         "pulse-soft": "pulse-soft 2s ease-in-out infinite",
       },
       boxShadow: {
-        'orange': '0 10px 30px -10px hsl(24 95% 53% / 0.35)',
-        'card': '0 4px 20px -2px hsl(24 30% 20% / 0.08)',
+        'orange': '0 10px 30px -10px hsl(24 83% 50% / 0.35)',
+        'card': '0 4px 20px -2px hsl(24 83% 50% / 0.08)',
       },
     },
   },

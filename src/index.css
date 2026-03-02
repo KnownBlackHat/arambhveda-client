@@ -1,55 +1,54 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Aarambh Veda - Education Portal Design System
-   Theme: Orange/Saffron & White - Inspired by Indian education portals
+/* Aarambhaveda ERP - Enterprise Sales Team Management
+   Theme: Orange & White - Warm Professional Design
 */
 
 @layer base {
   :root {
-    /* Main Colors - Orange/Saffron Theme */
-    --background: 30 100% 99%;
-    --foreground: 20 14% 15%;
+    --background: 30 50% 98%;
+    --foreground: 20 30% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 20 14% 15%;
+    --card-foreground: 20 30% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 20 14% 15%;
+    --popover-foreground: 20 30% 12%;
 
-    /* Primary - Deep Orange/Saffron */
-    --primary: 24 95% 53%;
+    /* Primary - Orange #e8651a */
+    --primary: 24 83% 50%;
     --primary-foreground: 0 0% 100%;
 
-    /* Secondary - Light Orange Tint */
-    --secondary: 30 100% 96%;
-    --secondary-foreground: 24 95% 40%;
+    /* Secondary */
+    --secondary: 30 30% 95%;
+    --secondary-foreground: 24 83% 40%;
 
-    /* Muted - Warm Gray */
-    --muted: 30 20% 96%;
+    /* Muted */
+    --muted: 30 20% 95%;
     --muted-foreground: 20 10% 45%;
 
-    /* Accent - Golden Yellow */
-    --accent: 43 96% 56%;
-    --accent-foreground: 20 14% 15%;
+    /* Accent - Warm Orange #f07d2e */
+    --accent: 24 87% 56%;
+    --accent-foreground: 0 0% 100%;
 
-    /* Success - Green for ratings/verified */
+    /* Success */
     --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 30% 90%;
-    --input: 30 30% 90%;
-    --ring: 24 95% 53%;
+    --border: 30 20% 90%;
+    --input: 30 20% 90%;
+    --ring: 24 83% 50%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Custom Orange Palette */
+    /* Orange palette */
     --orange-50: 30 100% 97%;
     --orange-100: 30 100% 94%;
     --orange-200: 28 100% 86%;
@@ -61,65 +60,64 @@
     --orange-800: 18 80% 30%;
     --orange-900: 16 75% 22%;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(24 95% 53%) 0%, hsl(36 100% 50%) 100%);
-    --gradient-hero: linear-gradient(180deg, hsl(30 100% 98%) 0%, hsl(30 60% 95%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(30 40% 98%) 100%);
+    /* ERP Specific */
+    --erp-navy: 24 83% 50%;
+    --erp-teal: 24 87% 56%;
+    --erp-sidebar: 20 40% 12%;
+    --erp-sidebar-hover: 20 35% 18%;
+    --erp-sidebar-active: 24 87% 56%;
 
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(24 30% 20% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(24 30% 20% / 0.1), 0 2px 4px -2px hsl(24 30% 20% / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(24 30% 20% / 0.1), 0 4px 6px -4px hsl(24 30% 20% / 0.1);
-    --shadow-xl: 0 20px 25px -5px hsl(24 30% 20% / 0.1), 0 8px 10px -6px hsl(24 30% 20% / 0.1);
-    --shadow-orange: 0 10px 30px -10px hsl(24 95% 53% / 0.35);
-
-    --sidebar-background: 30 100% 99%;
-    --sidebar-foreground: 20 14% 25%;
-    --sidebar-primary: 24 95% 53%;
+    --sidebar-background: 20 40% 12%;
+    --sidebar-foreground: 30 20% 80%;
+    --sidebar-primary: 24 87% 56%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 30 100% 96%;
-    --sidebar-accent-foreground: 24 95% 40%;
-    --sidebar-border: 30 30% 90%;
-    --sidebar-ring: 24 95% 53%;
+    --sidebar-accent: 24 83% 50%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 20 30% 18%;
+    --sidebar-ring: 24 83% 50%;
   }
 
   .dark {
-    --background: 20 14% 8%;
+    --background: 20 30% 6%;
     --foreground: 30 20% 95%;
 
-    --card: 20 14% 12%;
+    --card: 20 30% 10%;
     --card-foreground: 30 20% 95%;
 
-    --popover: 20 14% 12%;
+    --popover: 20 30% 10%;
     --popover-foreground: 30 20% 95%;
 
-    --primary: 24 95% 55%;
+    --primary: 24 87% 56%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 20 14% 18%;
-    --secondary-foreground: 30 100% 90%;
+    --secondary: 20 30% 15%;
+    --secondary-foreground: 30 20% 90%;
 
-    --muted: 20 14% 18%;
-    --muted-foreground: 30 15% 60%;
+    --muted: 20 30% 15%;
+    --muted-foreground: 30 15% 55%;
 
-    --accent: 43 96% 56%;
-    --accent-foreground: 20 14% 10%;
+    --accent: 24 83% 50%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 50%;
+    --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 20 14% 20%;
-    --input: 20 14% 20%;
-    --ring: 24 95% 55%;
+    --border: 20 30% 18%;
+    --input: 20 30% 18%;
+    --ring: 24 87% 56%;
 
-    --sidebar-background: 20 14% 10%;
-    --sidebar-foreground: 30 20% 90%;
-    --sidebar-primary: 24 95% 55%;
+    --erp-sidebar: 20 35% 8%;
+    --erp-sidebar-hover: 20 30% 14%;
+    --erp-sidebar-active: 24 83% 45%;
+
+    --sidebar-background: 20 35% 8%;
+    --sidebar-foreground: 30 20% 80%;
+    --sidebar-primary: 24 87% 56%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 20 14% 18%;
-    --sidebar-accent-foreground: 30 100% 90%;
-    --sidebar-border: 20 14% 18%;
-    --sidebar-ring: 24 95% 55%;
+    --sidebar-accent: 24 83% 45%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 20 30% 14%;
+    --sidebar-ring: 24 87% 56%;
   }
 }
 
@@ -129,12 +127,12 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Poppins', sans-serif;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', 'Poppins', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', 'Poppins', sans-serif;
     @apply font-semibold tracking-tight;
   }
 
@@ -146,19 +144,53 @@
 @layer utilities {
   .text-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: var(--gradient-primary);
+    background-image: linear-gradient(135deg, hsl(24 83% 50%) 0%, hsl(24 87% 56%) 100%);
   }
 
   .bg-gradient-primary {
-    background-image: var(--gradient-primary);
+    background-image: linear-gradient(135deg, hsl(24 83% 50%) 0%, hsl(24 87% 56%) 100%);
   }
 
   .bg-gradient-hero {
-    background-image: var(--gradient-hero);
+    background-image: linear-gradient(180deg, hsl(30 50% 98%) 0%, hsl(30 20% 95%) 100%);
   }
 
-  .shadow-orange {
-    box-shadow: var(--shadow-orange);
+  /* Space theme animations for login */
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes shoot {
+    0% { transform: translateX(0) translateY(0); opacity: 1; }
+    100% { transform: translateX(300px) translateY(300px); opacity: 0; }
+  }
+
+  @keyframes nebula-drift {
+    0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+    50% { transform: translate(30px, -20px) scale(1.1); opacity: 0.5; }
+    100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-twinkle {
+    animation: twinkle var(--tw-duration, 3s) ease-in-out infinite;
+  }
+
+  .animate-shoot {
+    animation: shoot 1.5s ease-out forwards;
+  }
+
+  .animate-nebula {
+    animation: nebula-drift 8s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
   }
 
   .card-hover {
@@ -167,16 +199,7 @@
 
   .card-hover:hover {
     @apply -translate-y-1;
-    box-shadow: var(--shadow-xl);
-  }
-
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    box-shadow: 0 20px 25px -5px hsl(24 83% 50% / 0.1), 0 8px 10px -6px hsl(24 83% 50% / 0.1);
   }
 
   .line-clamp-2 {
@@ -191,5 +214,34 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+
+  @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes scroll-right {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+
+  .animate-scroll-left {
+    animation: scroll-left 30s linear infinite;
+  }
+
+  .animate-scroll-right {
+    animation: scroll-right 35s linear infinite;
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

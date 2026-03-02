@@ -1,8 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Search, GraduationCap, Building, BookOpen, Users } from "lucide-react";
+import { Search, GraduationCap, Building, BookOpen, Users, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+
+import college1 from "@/assets/college-1.jpg";
+import college2 from "@/assets/college-2.jpg";
+import college3 from "@/assets/college-3.jpg";
+import college4 from "@/assets/college-4.jpg";
+import college5 from "@/assets/college-5.jpg";
+import college6 from "@/assets/college-6.jpg";
+
+const slides = [
+  { image: college1, name: "IIT Delhi", location: "New Delhi" },
+  { image: college2, name: "IIT Bombay", location: "Mumbai" },
+  { image: college3, name: "AIIMS Delhi", location: "New Delhi" },
+  { image: college4, name: "IIM Ahmedabad", location: "Ahmedabad" },
+  { image: college5, name: "NIT Trichy", location: "Tiruchirappalli" },
+  { image: college6, name: "BITS Pilani", location: "Pilani" },
+];
 
 const stats = [
   { icon: Building, value: "15,000+", label: "Colleges Listed" },
@@ -13,7 +29,15 @@ const stats = [
 
 export function HeroSection() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,75 +46,126 @@ export function HeroSection() {
     }
   };
 
+  const goToSlide = (index: number) => setCurrentSlide(index);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+
   return (
-    <section className="relative bg-gradient-hero overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent/10 rounded-full blur-3xl" />
+    <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
+      {/* Fullscreen Slideshow */}
+      {slides.map((slide, index) => (
+        <div
+          key={index}
+          className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+          style={{ opacity: currentSlide === index ? 1 : 0 }}
+        >
+          <img
+            src={slide.image}
+            alt={slide.name}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      ))}
+
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-black/50 z-10" />
+
+      {/* Content overlay */}
+      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center px-4">
+        {/* Heading */}
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-3 text-center drop-shadow-lg">
+          Find Your Perfect{" "}
+          <span className="text-primary">College</span> in India
+        </h1>
+        <p className="text-base md:text-lg text-white/90 mb-8 max-w-2xl text-center drop-shadow">
+          Discover 15,000+ colleges across India. Compare courses, fees, placements,
+          and make informed decisions for your future.
+        </p>
+
+        {/* Search Bar */}
+        <form onSubmit={handleSearch} className="w-full max-w-2xl mb-6">
+          <div className="flex flex-col sm:flex-row gap-0 bg-white rounded-xl shadow-2xl overflow-hidden">
+            <div className="relative flex-1">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+              <input
+                type="text"
+                placeholder="Search colleges, exams, courses and more..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-12 pr-4 h-14 text-base text-foreground bg-white border-0 outline-none"
+              />
+            </div>
+            <button
+              type="submit"
+              className="h-14 px-10 bg-primary text-primary-foreground font-semibold text-base hover:bg-primary/90 transition-colors shrink-0"
+            >
+              Search
+            </button>
+          </div>
+        </form>
+
+        {/* Quick Links */}
+        <div className="flex flex-wrap justify-center gap-2 mb-6">
+          <span className="text-sm text-white/70">Popular:</span>
+          {["IIT", "NIT", "AIIMS", "IIM", "Top Engineering", "Top MBA"].map((term) => (
+            <button
+              key={term}
+              onClick={() => navigate(`/colleges?search=${term}`)}
+              className="text-sm text-white hover:text-primary font-medium transition-colors underline-offset-2 hover:underline"
+            >
+              {term}
+            </button>
+          ))}
+        </div>
       </div>
 
-      <div className="container mx-auto px-4 py-16 md:py-24 relative">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-secondary px-4 py-1.5 rounded-full text-sm font-medium text-secondary-foreground mb-6 animate-fade-in">
-            <span className="w-2 h-2 bg-primary rounded-full animate-pulse-soft" />
-            India's Most Trusted Education Portal
-          </div>
+      {/* Slide navigation arrows */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/40 hover:bg-black/60 flex items-center justify-center text-white transition-colors"
+      >
+        <ChevronLeft className="w-5 h-5" />
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full bg-black/40 hover:bg-black/60 flex items-center justify-center text-white transition-colors"
+      >
+        <ChevronRight className="w-5 h-5" />
+      </button>
 
-          {/* Heading */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in">
-            Find Your Perfect{" "}
-            <span className="text-gradient">College</span> in India
-          </h1>
+      {/* Slide info + dots */}
+      <div className="absolute bottom-4 left-0 right-0 z-30 flex items-center justify-between px-6">
+        <div className="text-white text-sm drop-shadow">
+          <span className="font-semibold">{slides[currentSlide].name}</span>
+          <span className="text-white/70">, {slides[currentSlide].location}</span>
+        </div>
+        <div className="flex items-center gap-2">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => goToSlide(i)}
+              className={`w-2.5 h-2.5 rounded-full transition-all ${
+                currentSlide === i ? "bg-primary scale-125" : "bg-white/50 hover:bg-white/80"
+              }`}
+            />
+          ))}
+          <span className="text-white/70 text-sm ml-2">
+            {currentSlide + 1} / {slides.length}
+          </span>
+        </div>
+      </div>
 
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in">
-            Discover 15,000+ colleges across India. Compare courses, fees, placements, 
-            and make informed decisions for your future.
-          </p>
-
-          {/* Search Bar */}
-          <form onSubmit={handleSearch} className="max-w-2xl mx-auto mb-10 animate-fade-in">
-            <div className="flex flex-col sm:flex-row gap-3 p-2 bg-card rounded-xl shadow-lg border border-border">
-              <div className="relative flex-1">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                <Input
-                  type="text"
-                  placeholder="Search colleges, courses, exams..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-12 h-12 border-0 bg-transparent focus-visible:ring-0 text-base"
-                />
-              </div>
-              <Button type="submit" size="lg" className="h-12 px-8 shadow-orange">
-                Search
-              </Button>
-            </div>
-          </form>
-
-          {/* Quick Links */}
-          <div className="flex flex-wrap justify-center gap-2 mb-12 animate-fade-in">
-            <span className="text-sm text-muted-foreground">Popular:</span>
-            {["IIT", "NIT", "AIIMS", "IIM", "Top Engineering", "Top MBA"].map((term) => (
-              <button
-                key={term}
-                onClick={() => navigate(`/colleges?search=${term}`)}
-                className="text-sm text-primary hover:text-primary/80 font-medium transition-colors"
-              >
-                {term}
-              </button>
-            ))}
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 animate-fade-in">
+      {/* Stats bar at bottom */}
+      <div className="absolute -bottom-0 left-0 right-0 z-30">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-card/95 backdrop-blur-md rounded-t-xl p-4 shadow-lg border border-border border-b-0">
             {stats.map((stat) => (
-              <div key={stat.label} className="text-center p-4">
-                <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mx-auto mb-3">
-                  <stat.icon className="w-6 h-6 text-primary" />
+              <div key={stat.label} className="text-center">
+                <div className="flex items-center justify-center gap-2 mb-1">
+                  <stat.icon className="w-5 h-5 text-primary" />
+                  <span className="text-xl font-bold text-foreground">{stat.value}</span>
                 </div>
-                <div className="text-2xl md:text-3xl font-bold text-foreground">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-xs text-muted-foreground">{stat.label}</div>
               </div>
             ))}
           </div>
